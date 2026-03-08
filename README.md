@@ -23,6 +23,17 @@ The API includes some small performance optimizations:
 
 ---
 
+```markdown
+# Default seeded products
+
+When the application starts, some products are automatically seeded:
+
+- Laptop
+- Mouse
+- Keyboard
+
+These can be used to create orders immediately.
+
 # How to run the project
 
 Clone the repository and run the following commands:

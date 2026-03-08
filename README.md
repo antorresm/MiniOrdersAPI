@@ -6,6 +6,14 @@ This project was implemented as a take-home challenge and demonstrates clean arc
 
 ---
 
+# Performance considerations
+
+The API includes some small performance optimizations:
+
+- LINQ projection is used when listing orders to avoid loading unnecessary data.
+- Pagination is implemented using Skip/Take so filtering and paging are executed in the database.
+- Indexes were added on Orders.CreatedAt and Orders.Status to improve query performance when filtering and sorting orders.
+
 # Tech Stack
 
 - .NET 8 Web API
@@ -23,11 +31,3 @@ Clone the repository and run the following commands:
 dotnet restore
 dotnet ef database update
 dotnet run
-
-## Performance considerationst
-
-The API includes some small performance optimizations:
-
-- LINQ projection is used when listing orders to avoid loading unnecessary data.
-- Pagination is implemented using Skip/Take so filtering and paging are executed in the database.
-- Indexes were added on Orders.CreatedAt and Orders.Status to improve query performance when filtering and sorting orders.

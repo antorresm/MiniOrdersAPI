@@ -23,7 +23,6 @@ The API includes some small performance optimizations:
 
 ---
 
-```markdown
 # Default seeded products
 
 When the application starts, some products are automatically seeded:
@@ -33,6 +32,8 @@ When the application starts, some products are automatically seeded:
 - Keyboard
 
 These can be used to create orders immediately.
+
+---
 
 # How to run the project
 

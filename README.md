@@ -97,7 +97,7 @@ These can be used immediately to create orders.
 
 ### Create Order
 
-**POST** `/api/v1/orders`
+**POST** `/api/orders`
 
 Example request:
 
@@ -117,12 +117,12 @@ Response: `201 Created` with order details.
 
 ### Get Order by Id
 
-**GET** `/api/v1/orders/{id}`
+**GET** `/api/orders/{id}`
 
 Example:
 
 ```
-GET /api/v1/orders/1
+GET /api/orders/1
 ```
 
 Response: Order details with line items and status.
@@ -131,12 +131,12 @@ Response: Order details with line items and status.
 
 ### List Orders (Paged)
 
-**GET** `/api/v1/orders?page=1&pageSize=20`
+**GET** `/api/orders?page=1&pageSize=20`
 
 Optional filter by status:
 
 ```
-GET /api/v1/orders?status=Draft&page=1&pageSize=10
+GET /api/orders?status=Draft&page=1&pageSize=10
 ```
 
 Orders are sorted by `CreatedAt` in descending order.
@@ -147,7 +147,7 @@ Response: Paginated list of orders with total count.
 
 ### Update Order Status
 
-**PATCH** `/api/v1/orders/{id}/status`
+**PATCH** `/api/orders/{id}/status`
 
 Example request:
 
@@ -174,7 +174,7 @@ Invalid transitions return `400 Bad Request`.
 ### Create Order
 
 ```bash
-curl -X POST https://localhost:5001/api/v1/orders \
+curl -X POST https://localhost:5001/api/orders \
   -H "Content-Type: application/json" \
   -d '{
     "customerName": "Ada Lovelace",
@@ -187,19 +187,19 @@ curl -X POST https://localhost:5001/api/v1/orders \
 ### Get Order by Id
 
 ```bash
-curl https://localhost:5001/api/v1/orders/1
+curl https://localhost:5001/api/orders/1
 ```
 
 ### List Orders
 
 ```bash
-curl https://localhost:5001/api/v1/orders?page=1&pageSize=10
+curl https://localhost:5001/api/orders?page=1&pageSize=10
 ```
 
 ### Update Order Status
 
 ```bash
-curl -X PATCH https://localhost:5001/api/v1/orders/1/status \
+curl -X PATCH https://localhost:5001/api/orders/1/status \
   -H "Content-Type: application/json" \
   -d '{"status": "Submitted"}'
 ```
